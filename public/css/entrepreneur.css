@@ -1,0 +1,310 @@
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2 {
+    font-size: 46px;
+    line-height: 54px;
+    color: #222;
+}
+
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background: #E3E6F3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    left: 0;
+}
+
+#logos {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between the two logos */
+}
+
+#logos .logo {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover:after {
+    content: '';
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* Dropdown menu styling */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .dropdown-menu li {
+    border-bottom: 1px solid #555;
+  }
+  
+  .dropdown-menu li a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: #575757;
+    
+  
+  }
+  
+  /* Show dropdown when parent is hovered */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    
+  }
+
+.hero {
+    text-align: center;
+    padding: 2rem;
+    background: url('/images/networking.png') no-repeat center center/cover;
+    color: #222;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.profile-card {
+    background-color: white;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .profile-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.profile-card .profile-info {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.profile-card .profile-info .year {
+    background-color: #ffaa00;
+    color: #004080;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.profile-card .profile-info .course {
+    color: #555;
+    font-weight: bold;
+}
+
+.profile-card .profile-info h2 {
+    margin: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.profile-card .profile-info p {
+    margin: 0.5rem 0;
+}
+
+.profile-card .profile-info .explore-button {
+    background-color: #004080;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.profile-card .profile-info .explore-button:hover {
+    background-color: #003366;
+}
+
+/* Footer */
+.social-media1 {
+    text-align: center;
+}
+
+.social-media1 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-media1 ul li {
+    margin: 0 10px; /* Adjust spacing between icons */
+}
+
+.social-media1 ul li a {
+    color: #333; /* Adjust color as needed */
+    font-size: 30px; /* Adjust icon size */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media1 ul li a:hover {
+    color: #0077b5; /* Hover color for icons */
+}
+
+.footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.footer-content a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.footer-content a:hover {
+    color: #0077b5;
+}
+
+.footer-copyright {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.mainFooter {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for scroll buttons */
+.scroll-button {
+    position: fixed;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff9000;
+    color: white;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.scroll-button:hover {
+    background-color: #ff9000;
+}
+
+/* Positioning the "Go to Top" button */
+.top-button {
+    bottom: 20px; /* Distance from the bottom of the screen */
+}
+
+/* Arrow styling */
+.scroll-button::before {
+    /* content: "▲"; Unicode for the up arrow */
+    font-size: 18px;
+    margin-right: 5px;
+}
