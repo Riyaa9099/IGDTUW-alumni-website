@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGDTUW</title>
+    <link rel="stylesheet" href="/css/join.css"> <!-- Link to external CSS file -->
+</head>
+
+<body>
+  <section id="header">
+    <div id="logos">
+      <a href="#"><img src="/images/igdtuw_logo.png" class="logo" alt="IGDTUW Logo"></a>
+      <a href="#"><img src="/images/IGDTUAA.png" class="logo" alt="IGDTUAA Logo"></a>
+    </div>
+    <!--<h2>IGDTUAA-Alumni Portal</h2>-->
+    <div>
+      <ul id="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a  href="/Entrepreneur">Entrepreneurship</a></li>
+        <!---<li><a href="/Achievers">Achievers</a></li>-->
+        <li><a href="/job">Job Listings</a></li>
+        <li><a href="/">Events</a></li>
+        <li><a href="/">Gallery</a></li>
+        <!---<li><a href="/About">About Us</a></li>--->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="/About">About Institute</a></li>
+            <li><a href="/about_alumni_association">About Alumni Association</a></li>
+            <li><a href="/our_socialmedia">Social Media Groups</a></li>
+            
+          </ul>
+        </li>
+  
+        <li><a class="active" href="/join" id="Alumni_Connect">Join Us</a></li>
+       
+  
+  
+  
+  
+      </ul>
+    </div>
+  </section>
+    <!-- Join us -->
+    <section id="MainPage" >
+      <div class="connect">
+        <h1><b>CONNECTING GENERATIONS OF</b></h1>
+        <h1><b>EXCELLENCE!</b></h1>
+  
+      </div>
+    </section>
+
+
+
+    <!-- Alumni Network Section -->
+  <div class="content">
+    <div class="network-section">
+      <h2>IGDTUAA Alumni Network</h2>
+      <div class="stats-container">
+        <!-- Each stat-box has a number that will be animated -->
+        <div class="stat-box">
+          <div id="Btech-number" class="stat-number">0</div>
+          B.Tech
+        </div>
+        <div class="stat-box">
+          <div id="Mtech-number" class="stat-number">0</div>
+          M.Tech
+        </div>
+
+        <div class="stat-box">
+          <div id="phd-number" class="stat-number">0</div>
+          Ph.D.
+        </div>
+
+        <div class="stat-box">
+          <div id="chapters-number" class="stat-number">0</div>
+          Chapters
+        </div>
+
+        <div class="stat-box">
+          <div id="startups-number" class="stat-number">0</div>
+          Startups
+        </div>
+
+        <!---<div class="stat-box">
+          <div id="unicorns-number" class="stat-number">0</div>
+          Unicorns
+        </div>-->
+
+        <!---<div class="stat-box">
+          <div id="academicians-number" class="stat-number">0</div>
+          Academicians
+        </div>--->
+
+        <div class="stat-box">
+          <div id="research-number" class="stat-number">0</div>
+          Research
+        </div>
+
+        <!----<div class="stat-box">
+          <div id="authors-number" class="stat-number">0</div>
+          Authors
+        </div>
+
+        <div class="stat-box">
+          <div id="bureaucrats-number" class="stat-number">0</div>
+          Bureaucrats
+        </div>--->
+      </div>
+    </div>
+  </div>
+
+  <!-- Smart Card Section -->
+  <div class="smart-card-section">
+    <!-- Image Section -->
+    <div class="smart-image-container">
+      <!-- Replace with the actual image -->
+      <img src="/images/convo.jpg" alt="Smart Card Image">
+    </div>
+
+    <!-- Opportunity Section -->
+    <div class="opportunity-container">
+      <h2>Why to join us as - Alumni</h2>
+      <ul>
+        <li>Career Upliftment – Referral for high-end jobs in India and abroad</li>
+        <li>Promote your alumni-owned business, startup idea funding, and research</li>
+        <li>Stay connected with your almamaters.</li>
+        <li>Guide/Mentorship to students </li>
+        <li>Search or post job here</li>
+      </ul>
+      <div class="Register-button">
+
+        <a type="button" onclick="window.location.href='/register'"><span></span>REGISTER</a>
+        
+
+      </div>
+    </div>
+  </div>
+
+
+  
+  <!-- Smart Card Section 2 -->
+  <div class="smart-card-section2">
+    <!-- Image Section -->
+    <div class="smart-image-container2">
+      <!-- Replace with the actual image -->
+      <img src="/images/convo.jpg" alt="Smart Card Image">
+    </div>
+
+    <!-- Opportunity Section -->
+    <div class="opportunity-container2">
+      <h2>Why to join us as - Student</h2>
+      <ul>
+        <li>Career Upliftment – Referral for high-end jobs in India and abroad</li>
+        <li>Connect with alumnias</li>
+        <li>Search for internships</li>
+        <li>Get mentorship/guidance from Alumnias</li>
+        
+      </ul>
+      <div class="Register-button">
+
+        <a type="button" onclick="window.location.href='/register'"><span></span>REGISTER</a>
+        
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function animateNumber(id, start, end, duration) {
+      let current = start;
+      const increment = Math.ceil((end - start) / (duration / 50));
+      const counter = document.getElementById(id);
+
+      const interval = setInterval(() => {
+        current += increment;
+        if (current >= end) {
+          current = end;
+          clearInterval(interval);
+        }
+        counter.textContent = current.toLocaleString();
+      }, 50);
+    }
+
+    // Animate numbers for all stats
+    animateNumber("Btech-number", 0, 5000, 2000);
+    animateNumber("Mtech-number", 0, 5000, 2000);
+    animateNumber("phd-number", 0, 1000, 2000);
+    animateNumber("chapters-number", 0, 30, 2000);
+    animateNumber("startups-number", 0, 100, 2000);
+    
+    animateNumber("research-number", 0, 100, 2000);
+    
+  </script>
+
+
+  <!-- Go to Top Button -->
+  <button onclick="scrollToTop()" class="scroll-button top-button"> &#9650;</button>
+  <script>
+    
+// Function to scroll to the top of the page
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+  </script>
+
+    
+
+
+   
+        <!-- footer -->
+        <footer class="mainFooter" style="padding-top:60px; background: url(assets/images/footer_bg3.jpeg) no-repeat; background-size: cover; background-color:#E3E6F3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="headerContent">
+                            <h2 style="color: #000"><span><b>Indira Gandhi Delhi Technical University For Women</b></span></h2>
+                            <h5 style="font-family: 'Playfair Display', serif; color: #000"><span>(UNDER DELHI VIDE ACT 9 OF 2012, GOVT. OF NCT OF DELHI)</span></h5>
+                            <h6 style="font-family: 'Playfair Display', serif; color: #000"><span>ISO 9001:2015 Certified University</span></h6>
+                            <h6 style="font-family: 'Playfair Display', serif; color:#000"><span>JAMES CHURCH, NEW CHURCH ROAD, KASHMERE GATE<br> DELHI -110006.</span></h6>
+                        </div>
+                        <div class="social-media1">
+                            <ul>
+                                <li><a href="https://www.facebook.com/igdtuw.delhi.5"><ion-icon name="logo-facebook"></ion-icon></a></li>	
+                                <li><a href="https://www.youtube.com/channel/UCKmYhevZ59gJJP0ZbpReBKA/featured"><ion-icon name="logo-youtube"></ion-icon></a></li>
+                                <li><a href="https://www.instagram.com/igdtuwrocks?r=nametag"><ion-icon name="logo-instagram"></ion-icon></a></li>	
+                                <li><a href="https://twitter.com/IGDTUW_Delhi"><ion-icon name="logo-twitter"></ion-icon>
+                                </a></li>
+                            </ul>	
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyRight" style="padding-top: 5px;">
+                    <p style="font-size: 14px;">Copyright @IGDTUW - Designed &amp; Maintained by <a style="color: #000;" href="https://www.linkedin.com/in/nidhi-chaukiyal-28b514290?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BtKqhIik2TLesMTTIYKMyXQ%3D%3D">Nidhi Chaukiyal & Riya</a></p>
+                </div>
+            </div>
+        </footer>
+    
+        
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="script.js"></script>
+
+
+
+
+
+
+
+</body>
+
+</html>
