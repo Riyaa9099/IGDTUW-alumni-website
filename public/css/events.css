@@ -1,0 +1,405 @@
+/* General Reset */
+@import url('https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background: #E3E6F3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 1000;
+    position: sticky;
+    top: 0;
+    text-align: center;
+    left: 0;
+  }
+  
+  #logos {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds space between the two logos */
+  }
+  
+  #logos .logo {
+    width: 100px;
+    height: auto;
+    
+    cursor: pointer;
+  }
+  
+  #navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+  }
+  
+  #navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+  }
+  
+  #navbar li a:hover,
+  #navbar li a.active {
+    color: #088178;
+  }
+  
+  #navbar li a.active::after,
+  #navbar li a:hover:after {
+    content: '';
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Dropdown menu styling */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  border-bottom: 1px solid #555;
+}
+
+.dropdown-menu li a {
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #575757;
+  
+
+}
+
+/* Show dropdown when parent is hovered */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  
+}
+body, h1, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background-color: #121212;
+    line-height: 1.6;
+}
+
+/* Inner Banner */
+.inner-banner-wrapper {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    padding: 50px 0;
+    background-size: cover;
+    background-position: center;
+}
+.inner-banner-wrapper .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+.inner-banner-wrapper .container h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 36px;
+    margin-top: 20px;
+}
+
+/* Event card styles */
+.events-section {
+    padding: 5rem;
+    text-align: center;
+    background: linear-gradient(180deg, #e8eaf6, #ede7f6);
+    
+  }
+  
+  .events-title {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+  }
+  
+  .events-container {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    
+  }
+  
+  .event-card {
+    background-color: #fff;
+    background-image: url(/images/event-placeholder.jpg);
+    border: 1px solid #fff;
+    /* border-radius: 10px; */
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    height: 250px;
+    text-align: left;
+    transition: transform 0.3s;
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .event-date {
+    background-color: #49184A;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .event-title {
+    font-size: 1.2rem;
+    color: #34495e;
+    margin-bottom: 0.5rem;
+  }
+  
+  .event-location {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+  }
+  
+  .explore-more {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #3498db;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  
+  .explore-more:hover {
+    color: #1abc9c;
+  }
+  .register{
+    color: #1abc9c;
+  }
+/* Basic styling for scroll buttons */
+.scroll-button {
+    position: fixed;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #008CBA;
+    color: white;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.scroll-button:hover {
+    background-color: #008CBA;
+}
+
+/* Positioning the "Go to Top" button */
+.top-button {
+    bottom: 20px; /* Distance from the bottom of the screen */
+}
+
+/* Arrow styling */
+.scroll-button::before {
+    /* content: "▲"; Unicode for the up arrow */
+    font-size: 18px;
+    margin-right: 5px;
+}
+
+/* CSS for Top Header */
+.top-header {
+    background-color: #d4af37; /* White background for a clean look */
+    padding: 7px 0; /* Top and bottom padding */
+    border-bottom: 2px solid #d9d9d9; /* Subtle bottom border */
+    font-family: 'Arial', sans-serif; /* Font family */
+}
+
+.top-header .container-fluid {
+    max-width: 1200px; /* Limit max width */
+    margin: 0 auto; /* Center align the content */
+}
+
+.top-right-nav {
+    text-align: right; /* Align navigation to the right */
+}
+
+.top-right-nav ul {
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex; /* Use flex for horizontal alignment */
+    gap: 20px; /* Space between list items */
+    justify-content: flex-end; /* Align items to the right */
+}
+
+.top-right-nav ul li {
+    display: inline-block; /* Inline block for list items */
+}
+
+.top-right-nav ul li a {
+    color: #333333; /* Dark gray text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    font-weight: 600; /* Bold text */
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center icon with text */
+    gap: 8px; /* Space between icon and text */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.top-right-nav ul li a:hover {
+    color: #0073e6; /* Blue color on hover */
+}
+
+.material-icons {
+    font-size: 18px; /* Icon size */
+    vertical-align: middle; /* Align icon with text */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .top-header {
+        padding: 15px 0; /* Increase padding for smaller screens */
+    }
+
+    .top-right-nav ul {
+        gap: 15px; /* Reduce gap for smaller screens */
+    }
+
+    .top-right-nav ul li a {
+        font-size: 14px; /* Adjust font size */
+    }
+}
+
+
+  /* Footer */
+  .social-media1 {
+    text-align: center;
+  }
+  
+  .social-media1 ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-media1 ul li {
+    margin: 0 10px; /* Adjust spacing between icons */
+  }
+  
+  .social-media1 ul li a {
+    color: #333; /* Adjust color as needed */
+    font-size: 30px; /* Adjust icon size */
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  .social-media1 ul li a:hover {
+    color: #0077b5; /* Hover color for icons */
+  }
+    .footer {
+      background: black;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+    }
+    
+    .footer-content a {
+      margin: 0 10px;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    
+    .footer-content a:hover {
+      color: #000;
+    }
+    
+    .footer-copyright {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    
+  
+  .mainFooter {
+      background-color: #fff;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      width: 100%;
+  }
+
+  
+  footer p {
+      margin: 0;
+      font-size: 1em;
+  }
+  
+  html, body{
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
