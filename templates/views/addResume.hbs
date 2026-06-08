@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background-color: #0056a6;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 1200px;
+            background: white;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #ddd;
+        }
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            cursor: pointer;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-bottom: none;
+        }
+        .tab.active {
+            background: #fff;
+            border-bottom: 2px solid white;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        input[type="file"] {
+            padding: 0;
+        }
+        button {
+            background-color: #0056a6;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #004080;
+        }
+    </style>
+</head>
+<body>
+    <form action="/addResume" method="POST" enctype="multipart/form-data">
+        <div class="navbar">
+            <h1>Resume Form</h1>
+        </div>
+        <div class="container">
+            <div class="tabs">
+                <div class="tab active" onclick="showTab('personal')">Personal</div>
+                <div class="tab" onclick="showTab('address')">Address</div>
+                <div class="tab" onclick="showTab('education')">Education</div>
+                <div class="tab" onclick="showTab('skills')">Skills</div>
+                <div class="tab" onclick="showTab('upload-resume')">Upload Resume</div>
+            </div>
+            <div id="personal" class="tab-content active">
+                <h2>Personal Information</h2>
+                <label for="application-title">Application Title</label>
+                <input type="text" id="application-title" name="application-title" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" required>
+
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" required>
+
+                <label for="photo">Photo</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+
+                <label for="home-phone">Home Phone</label>
+                <input type="text" id="home-phone" name="home-phone">
+
+                <label for="work-phone">Work Phone</label>
+                <input type="text" id="work-phone" name="work-phone">
+            </div>
+            <div id="address" class="tab-content">
+                <h2>Address</h2>
+                <label for="street">Street</label>
+                <input type="text" id="street" name="street">
+
+                <label for="city">City</label>
+                <input type="text" id="city" name="city">
+
+                <label for="state">State</label>
+                <input type="text" id="state" name="state">
+
+                <label for="zip">ZIP Code</label>
+                <input type="text" id="zip" name="zip">
+            </div>
+            <div id="education" class="tab-content">
+                <h2>Education</h2>
+                <label for="degree">Degree</label>
+                <input type="text" id="degree" name="degree">
+
+                <label for="institution">Institution</label>
+                <input type="text" id="institution" name="institution">
+
+                <label for="graduation-year">Year of Graduation</label>
+                <input type="text" id="graduation-year" name="graduation-year">
+            </div>
+            <div id="skills" class="tab-content">
+                <h2>Skills</h2>
+                <label for="skills">List Your Skills</label>
+                <textarea id="skills" name="skills" rows="5"></textarea>
+            </div>
+            <div id="upload-resume" class="tab-content">
+                <h2>Upload Resume</h2>
+                <label for="resume">Upload Your Resume</label>
+                <input type="file" id="resume" name="resume" accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            document.querySelector(`#${tabId}`).classList.add('active');
+            document.querySelector(`.tab[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
