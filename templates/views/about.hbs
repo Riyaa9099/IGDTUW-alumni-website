@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGDTUW</title>
+    <link rel="stylesheet" href="/css/about.css"> <!-- Link to external CSS file -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <section id="header">
+    <div id="logos">
+      <a href="#"><img src="/images/igdtuw_logo.png" class="logo" alt="IGDTUW Logo"></a>
+      <a href="#"><img src="/images/IGDTUAA.png" class="logo" alt="IGDTUAA Logo"></a>
+    </div>
+    <!--<h2>IGDTUAA-Alumni Portal</h2>-->
+        
+        <div>
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="/Entrepreneur">Entrepreneurship</a></li>
+        <!---<li><a href="/Achievers">Achievers</a></li>-->
+                <li><a href="/job">Job Listings</a></li>
+                <li><a href="/">Events</a></li>
+                
+                <li><a href="/">Gallery</a></li>
+                <li><a class="active" href="/About">About</a></li>
+                <li><a href="/join" id="Alumni_Connect">Join Us</a></li>
+                
+
+
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 1: Origins of IGDTUW -->
+    <section class="origins-section">
+        <div class="origins-container">
+            <img src="/images/igdtuw_entry.jpg" alt="Origins" class="origins-image">
+            <div class="origins-text">
+                <h2>Origins of IGDTUW</h2>
+                <p>
+                  Indira Gandhi Institute of Technology was established by the Department of Training and Technical Education, Govt. of Delhi, in 1998 as the first woman Engineering College in India. It was the first institute to become a constituent college of Guru Gobind Singh Indraprastha University.[3] From May, 2013 IGIT has acquired the status of the first Women's technical University under Govt. of Delhi and rechristened as Indira Gandhi Delhi Technical University for Women.
+
+                  Indira Gandhi Delhi Technical University for Women (IGDTUW) was established by the Govt. NCT of Delhi in May 2013 vide Delhi Act 09 of 2012, as a non-affiliating University to facilitate and promote studies, research, technology, innovation, incubation and extension work in emerging areas of professional education among women, with a focus on engineering, technology, applied sciences, architecture and its allied areas.
+                  
+                  Erstwhile Indira Gandhi Institute of Technology (IGIT) was established in 1998 by the Directorate of Training and Technical Education, Govt. of NCT of Delhi as the first engineering college for women only. In 2002, the college became the first constituent college of Guru Gobind Singh Indraprastha University.
+                </p>
+                
+                <p>
+                  <h3>
+                    Visit Our Website: <a href="https://www.igdtuw.ac.in/" target="_blank" rel="noopener noreferrer">https://www.igdtuw.ac.in/</a>
+                  </h3>
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <div class="reach-section">
+        <h1>OUR REACH</h1>
+        <div class="reach-grid">
+            <div class="reach-card">
+                <div class="icon facebook"></div>
+                <p class="followers" id="facebook-count">0</p>
+                <p class="label">followers</p>
+            </div>
+            <div class="reach-card">
+                <div class="icon instagram"></div>
+                <p class="followers" id="instagram-count">0</p>
+                <p class="label">followers</p>
+            </div>
+            <div class="reach-card">
+                <div class="icon linkedin"></div>
+                <p class="followers" id="linkedin-count">0</p>
+                <p class="label">followers</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <section class="spotlight">
+        <h1>IN THE SPOTLIGHT</h1>
+        <div class="cards">
+          <div class="card">
+            <img src="i3.png" alt="We are on Forbes">
+            <div class="content">
+              <h2>We are on Forbes</h2>
+            </div>
+          </div>
+          <div class="card">
+            <img src="i4.png" alt="Eureka! GCC First Ever Edition">
+            <div class="content">
+              <h2>Eureka! GCC First Ever Edition</h2>
+            </div>
+          </div>
+          <div class="card">
+            <img src="i5.png" alt="Eureka! on front page of The Hindu">
+            <div class="content">
+              <h2>Eureka! on front page of The Hindu</h2>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  
+  <div class="container">
+    <h1 class="title">PATRONAGES AND RECOGNITIONS</h1>
+    <div class="grid">
+      <div class="item"><img src="" alt="UNESCO"></div>
+      <div class="item"><img src="startupindia.png" alt="#StartupIndia"></div>
+      <div class="item"><img src="digitalindia.png" alt="Digital India"></div>
+      <div class="item"><img src="makeinindia.png" alt="Make in India"></div>
+      <div class="item"><img src="wadhwani.png" alt="Wadhwani Foundation"></div>
+      <div class="item"><img src="cnn.png" alt="CNN"></div>
+    </div>
+  </div>
+  <script>
+    
+// Counting animation for "Our Reach" section
+const counters = document.querySelectorAll('.count');
+const speed = 200; // Speed of counting animation
+
+counters.forEach(counter => {
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+
+        // Calculate increment
+        const increment = target / speed;
+
+        if (count < target) {
+            counter.innerText = Math.ceil(count + increment);
+            setTimeout(updateCount, 10);
+        } else {
+            counter.innerText = target.toLocaleString(); // Ensure proper formatting
+        }
+    };
+
+    updateCount();
+});
+
+// Target follower counts
+const followerCounts = {
+    facebook: 444000,
+    instagram: 58000,
+    linkedin: 51000,
+};
+
+// Function to animate counting numbers
+function animateCount(elementId, targetValue) {
+    let currentValue = 0;
+    const increment = Math.ceil(targetValue / 100); // Divide into 100 steps
+    const element = document.getElementById(elementId);
+
+    const interval = setInterval(() => {
+        currentValue += increment;
+
+        // Stop animation if the count reaches the target
+        if (currentValue >= targetValue) {
+            currentValue = targetValue;
+            clearInterval(interval);
+        }
+
+        element.textContent = currentValue.toLocaleString(); // Format with commas
+    }, 30); // Update every 30ms
+}
+
+// Start animation when the page loads
+window.onload = () => {
+    animateCount('facebook-count', followerCounts.facebook);
+    animateCount('instagram-count', followerCounts.instagram);
+    animateCount('linkedin-count', followerCounts.linkedin);
+};
+// JavaScript for adding interactivity (if needed)
+// Ensure equal height for spotlight cards dynamically
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".card");
+    let maxHeight = 0;
+  
+    cards.forEach((card) => {
+      maxHeight = Math.max(maxHeight, card.offsetHeight);
+    });
+  
+    cards.forEach((card) => {
+      card.style.height = `${maxHeight}px`;
+    });
+  });
+  
+
+  </script>
+
+        <!-- footer -->
+        <footer class="mainFooter" style="padding-top:60px; background: url(assets/images/footer_bg3.jpeg) no-repeat; background-size: cover; background-color:#E3E6F3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <div class="headerContent">
+                            <h2 style="color: #000"><span><b>Indira Gandhi Delhi Technical University For Women</b></span></h2>
+                            <h5 style="font-family: 'Playfair Display', serif; color: #000"><span>(UNDER DELHI VIDE ACT 9 OF 2012, GOVT. OF NCT OF DELHI)</span></h5>
+                            <h6 style="font-family: 'Playfair Display', serif; color: #000"><span>ISO 9001:2015 Certified University</span></h6>
+                            <h6 style="font-family: 'Playfair Display', serif; color:#000"><span>JAMES CHURCH, NEW CHURCH ROAD, KASHMERE GATE<br> DELHI -110006.</span></h6>
+                        </div>
+                        <div class="social-media1">
+                            <ul>
+                                <li><a href="https://www.facebook.com/igdtuw.delhi.5"><ion-icon name="logo-facebook"></ion-icon></a></li>	
+                                <li><a href="https://www.youtube.com/channel/UCKmYhevZ59gJJP0ZbpReBKA/featured"><ion-icon name="logo-youtube"></ion-icon></a></li>
+                                <li><a href="https://www.instagram.com/igdtuwrocks?r=nametag"><ion-icon name="logo-instagram"></ion-icon></a></li>	
+                                <li><a href="https://twitter.com/IGDTUW_Delhi"><ion-icon name="logo-twitter"></ion-icon>
+                                </a></li>
+                            </ul>	
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyRight" style="padding-top: 5px;">
+                    <p style="font-size: 14px;">Copyright @IGDTUW - Designed &amp; Maintained by <a style="color: #000;" href="https://www.linkedin.com/in/nidhi-chaukiyal-28b514290?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BtKqhIik2TLesMTTIYKMyXQ%3D%3D">Nidhi Chaukiyal & Riya</a></p>
+                </div>
+            </div>
+        </footer>
+    
+        <!-- <footer>
+            <p>&copy; 2024 Alumni Network. All rights reserved.</p>
+        </footer> -->
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="script.js"></script>
+
+</body>
+</html>
