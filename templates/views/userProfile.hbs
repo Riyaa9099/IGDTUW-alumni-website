@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <!--<link rel="stylesheet" href="css/profile.css">--->
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.profile-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.profile-header h1 {
+    font-size: 28px;
+    color: #333;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+.profile-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile-photo {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #4CAF50;
+}
+
+.profile-details {
+    flex: 2;
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.profile-details h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #4CAF50;
+}
+
+.profile-details p {
+    margin: 10px 0;
+}
+
+.profile-details strong {
+    color: #333;
+}
+
+.profile-details a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.profile-details a:hover {
+    text-decoration: underline;
+}
+
+</style>
+<body>
+    <div id="registrationForm" class="profile-container">
+        <div class="profile-header">
+            <h1>Welcome, <span id="displayName"></span></h1>
+            <button class="edit-btn" id="editButton" >Edit Profile</button>
+        </div>
+        <div class="profile-info">
+            <div class="profile-photo" id= "profilePic">
+                <img src="" alt="Profile Photo">
+            </div>
+            <div class="profile-details">
+                <h2>Personal Information</h2>
+                <p><strong>Name:</strong> <span id="firstName"></span></p>
+                <p><strong>Email:</strong> <span id="email"></span></p>
+                <p><strong>Phone:</strong> <span id="mobileNo"></span></p>
+                <p><strong>Course:</strong> <span id="course"></span></p>
+                <p><strong>Degree:</strong> <span id="degree"></span></p>
+                <p><strong>Year of Passing:</strong> <span id="passingYear"></span></p>
+                <p><strong>Sector:</strong> <span id="sector"></span></p>
+                <p><strong>Volunteer:</strong> <span id="volunteer"></span></p>
+                <p><strong>LinkedIn:</strong> <span id="linkedIn"></span></p>
+                <p><strong>referredBy:</strong> <span id="referredby"></span></p>
+                <!----<button id="editButton">Edit</button>--->
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Get form values
+                <!---const firstName = document.getElementById('firstName').value;
+                const lastName = document.getElementById('lastName').value;
+                const email = document.getElementById('email').value;
+                const mobileNo = document.getElementById('mobileNo').value;
+                const photograph = document.getElementById('photograph').files[0];  
+                const course = document.getElementById('course').value;
+                const degree = document.getElementById('degree').value;
+                const passingYear = document.getElementById('passingYear').value;
+                const volunteer = document.getElementById('volunteer').value;
+                const sector = document.getElementById('sector').value;
+                const linkedin = document.getElementById('linkedin').value;
+                const referredBy = document.getElementById('referredBy').value;--->
+                const firstName = localStorage.getItem('firstName');
+                const lastName = localStorage.getItem('lastName');
+                const email = localStorage.getItem('email');
+                const mobileNo = localStorage.getItem('mobileNo');
+                const course = localStorage.getItem('course');
+                const degree = localStorage.getItem('degree');
+                const passingYear = localStorage.getItem('passingYear');
+                const volunteer = localStorage.getItem('volunteer');
+                const sector = localStorage.getItem('sector');
+                const linkedin = localStorage.getItem('linkedin');
+                const referredBy = localStorage.getItem('referredBy');
+
+                
+               // Display values on the profile page
+               document.getElementById('displayName').textContent = `${firstName} ${lastName}`;
+               document.getElementById('displayEmail').textContent = email;
+               document.getElementById('displayPhone').textContent = mobileNo;
+               document.getElementById('displayCourse').textContent = course;
+               document.getElementById('displayDegree').textContent = degree;
+               document.getElementById('displayPassingYear').textContent = passingYear;
+               document.getElementById('displayVolunteer').textContent = volunteer;
+               document.getElementById('displaySector').textContent = sector;
+               document.getElementById('displayLinkedIn').textContent = linkedin;
+               document.getElementById('displayReferredby').textContent = referredBy;
+        
+
+               // Set profile picture (if any)
+               if (photograph) {
+                document.getElementById('profilePic').src = photograph; // Assuming you want to use the file name
+               }
+
+            
+            
+            });
+            document.getElementById('editButton').addEventListener('click', function() {
+                // Show the registration form again for editing
+                document.getElementById('registrationForm').style.display = 'block';
+                document.getElementById('profilePage').style.display = 'none';
+            });
+            
+        </script>
+    </div>
+</body>
+</html>
