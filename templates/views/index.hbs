@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IGDTU</title>
+  <!-- Bootsratp CSS -->
+  <!---<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">--->
+
+
+  <link rel="stylesheet" href="/css/style.css"> <!-- Link to external CSS file -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "_EvfzWWQ0NSDojHsj",
+      });
+    })();
+  </script>
+</head>
+
+<body>
+  
+  <section id="header">
+    <div id="logos">
+      <a href="#"><img src="/images/igdtuw_logo.png" class="logo" alt="IGDTUW Logo"></a>
+      <a href="#"><img src="/images/IGDTUAA.png" class="logo" alt="IGDTUAA Logo"></a>
+    </div>
+    <!--<h2>IGDTUAA-Alumni Portal</h2>-->
+
+    <div>
+      <ul id="navbar">
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href="/Entrepreneur">Entrepreneurship</a></li>
+        <!---<li><a href="/Achievers">Achievers</a></li>-->
+        <li><a href="/job">Job Listings</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <!---<li><a href="/About">About Us</a></li>--->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="/About">About Institute</a></li>
+            <li><a href="/about_alumni_association">About Alumni Association</a></li>
+            <li><a href="/our_socialmedia">Social Media Groups</a></li>
+            <!---<li><a href="https://www.alumni.jaypeeu.ac.in/documents">Documents</a></li>
+            <li><a href="https://www.alumni.jaypeeu.ac.in/alumni-database">Alumni Database</a></li>--->
+          </ul>
+        </li>
+        <li><a href="/updates">What's New</a></li>
+
+        <li><a href="/join" id="Alumni_Connect">Join Us</a></li>
+        <!-- Search bar section -->
+        <!---<li class="search-container">
+                    <input type="text" placeholder="Search Alumni..." id="searchInput">
+                    <button type="button" id="searchButton"><ion-icon name="search"></ion-icon></button>
+                </li>---->
+
+
+
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- Top Header -->
+    <div class="top-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-sm-8 col-12 ms-auto">
+                    <div class="top-right-nav">
+                        <ul>
+                            <li><a href="#contact-form">Contact Us</a></li>
+                            <li>
+                                <!---<a href="/register">Log In <span class="material-icons">lock</span></a>-->
+                                <div class="login">
+                                  <button><a href="/register">Login <ion-icon name="lock-closed"></ion-icon></a></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- home page -->
+  <section id="MainPage">
+    
+    <div class="content">
+    
+      <h1><b>Welcome to the Alumni Forum Of IGDTUW</b></h1>
+      <h4><b>This platform connects alumni, current students, and the administration.</b></h4>
+      <div>
+
+        <button type="button" onclick="window.location.href='/register'"><span></span>REGISTER</button>
+        <button type="button" onclick="window.location.href='/login'"><span></span>LOGIN</button>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container">
+      <div class="announcement-text">
+        Join us for the Annual Alumni Reunion 2025 | New job opportunities for IGDTUW graduates | Mentorship program now open for registration
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Events Section -->
+  <section class="events-section" id="events">
+        <h2 class="events-title">EVENTS</h2>
+        <div class="events-container">
+          <div class="event-card">
+            <div class="event-date">
+              <span class="date"><ion-icon name="calendar-sharp"></ion-icon> SEPTEMBER 5, 2025</span>
+            </div>
+            <h3 class="event-title">Teacher's Day Celebration</h3>
+            <p class="event-location"><ion-icon name="location-sharp"></ion-icon> IGDTUW, Auditorium</p>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <span class="date"><ion-icon name="calendar-sharp"></ion-icon> APRIL 8, 2025</span>
+            </div>
+            <h3 class="event-title">Taarangana (Annual function)</h3>
+            <p class="event-location"><ion-icon name="location-sharp"></ion-icon> IGDTUW, Ground</p>
+          </div>
+          <div class="event-card">
+            <div class="event-date">
+              <span class="date"><ion-icon name="calendar-sharp"></ion-icon> APRIL 2, 2025</span>
+            </div>
+            <h3 class="event-title">Volleyball - 2025</h3>
+            <p class="event-location"><ion-icon name="location-sharp"></ion-icon> IGDTUW, Ground</p>
+          </div>
+        </div>
+        <a href="/events" class="explore-more">Explore More →</a>
+      </section>
+      
+  
+
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>GALLERY ARCHIVES</h2>
+    <p>Welcome to Our Alumni Gallery</p>
+    <div class="gallery">
+      <div class="image-container">
+          <img src="images/2.jpg" alt="E-Summit Moment 1" onclick="popOut(this)">
+      </div>
+      <div class="image-container">
+          <img src="images/1.jpg" alt="E-Summit Moment 2" onclick="popOut(this)">
+      </div>
+      <div class="image-container">
+          <img src="images/5.jpg" alt="E-Summit Moment 3" onclick="popOut(this)">
+      </div>
+      <div class="image-container">
+          <img src="images/3.jpg" alt="E-Summit Moment 4" onclick="popOut(this)">
+      </div>
+      <div class="image-container">
+          <img src="images/4.jpg" alt="E-Summit Moment 5" onclick="popOut(this)">
+      </div>
+      
+  </div>
+    <div class="gallery-wall">
+      <div class="fe-box"><img src="images/2.jpg" alt="Gallery Image 1"></div>
+      <div class="fe-box"><img src="images/1.jpg" alt="Gallery Image 2"></div>
+      <div class="fe-box"><img src="images/3.jpg" alt="Gallery Image 3"></div>
+      <div class="fe-box"><img src="images/4.jpg" alt="Gallery Image 4"></div>
+      <div class="fe-box"><img src="images/5.jpg" alt="Gallery Image 5"></div>
+      <div class="fe-box"><img src="images/6.jpg" alt="Gallery Image 6"></div>
+    </div>
+  </section>
+
+<script>
+    function popOut(image) {
+        image.style.transform = 'scale(1.2)';
+        setTimeout(() => {
+            image.style.transform = 'scale(1)';
+        }, 300);
+    }
+</script>
+
+
+
+
+
+
+
+  <!-- Go to Top Button -->
+  <button onclick="scrollToTop()" class="scroll-button top-button"> &#9650;</button>
+  <script>
+    
+// Function to scroll to the top of the page
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+  </script>
+
+  <!-- Optional JavaScript for enhanced functionality -->
+  <script>
+    // Toggle dropdown on click (if hover is not preferred)
+    document.querySelectorAll('.dropdown-toggle').forEach(dropdown => {
+      dropdown.addEventListener('click', function (event) {
+        event.preventDefault(); // Prevent default link behavior
+        const menu = this.nextElementSibling; // Get the dropdown menu
+        const isVisible = menu.style.display === 'block';
+        // Hide all other dropdowns
+        document.querySelectorAll('.dropdown-menu').forEach(m => m.style.display = 'none');
+        // Toggle the current menu
+        menu.style.display = isVisible ? 'none' : 'block';
+      });
+    });
+
+    // Close dropdown if clicked outside
+    window.addEventListener('click', function (e) {
+      if (!e.target.matches('.dropdown-toggle')) {
+        document.querySelectorAll('.dropdown-menu').forEach(menu => menu.style.display = 'none');
+      }
+    });
+  </script>
+
+
+
+
+ 
+<div class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+
+
+
+          <div class="sponserSection">
+            <div class="heading"><i><img src="images/our-sponser.png"></i>
+              <h3>Our Sponsors</h3>
+            </div>
+            
+            <!-- First Line Moving Left -->
+            <div class="marquee">
+                <div class="sponsor-logo"><img src="images/sponsors/paytm.png" alt="Sponsor"></div>
+                <div class="sponsor-logo"><img src="images/sponsors/infosys.png" alt="Sponsor"></div>
+                <div class="sponsor-logo"><img src="images/sponsors/wipro.png" alt="Sponsor"></div>
+                <div class="sponsor-logo"><img src="images/sponsors/bharatpetrolum.png" alt="Sponsor"></div>
+                <div class="sponsor-logo"><img src="images/sponsors/tech.png" alt="Sponsor"></div>
+            </div>
+
+            <!-- Second Line Moving Right -->
+            <div class="marquee marquee-reverse">
+                <div class="sponsor-logo"><img src="images/sponsors/uber.png" alt="Sponsor"></div>
+                <div class="sponsor-logo"><img src="images/sponsors/tata.png" alt="Sponsor"></div>
+                <div class="sponsor-logo"><img src="images/sponsors/ongc.png" alt="Sponsor"></div>
+                <div class="sponsor-logo"><img src="images/sponsors/codingNinjas.png" alt="Sponsor"></div>
+                <div class="sponsor-logo"><img src="images/sponsors/wipro.png" alt="Sponsor"></div>
+            </div>
+        </div>
+          
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="testimonial-section">
+  <h2>TESTIMONIAL</h2>
+  <!---<div class="testimonial-section">--->
+      <div class="testimonial-slider" id="slider">
+        <div class="testimonial">
+          <img src="/images/vc_mam.jpeg" alt="Ranjana Jha">
+          <h3>Dr. Ranjana Jha</h3>
+          <span>Vice Chancellor, IGDTUW</span>
+          <p>
+            "As we stand at the intersection of technology and societal progress, IGDTUW plays a pivotal role in empowering women through world-class technical education and research. Our university is committed to foster an environment of innovation, inclusivity, and leadership, where women are equipped with the skills and knowledge necessary to thrive in today’s dynamic world.
+
+            In an era of rapid technological advancement, it is essential that our students not only excel academically but also develop the critical thinking, creativity, and ethical leadership required to address the global challenges of tomorrow. IGDTUW is dedicated to provide a holistic education that blends academic rigour with practical experience while also encouraging collaboration and interdisciplinary learning.
+            
+            As we continue to build on the university’s strong foundation, my vision is to lead IGDTUW toward becoming a global center of excellence in technical education and research. We will work to create opportunities for our students and faculties to engage in cutting-edge research, international collaborations, and entrepreneurial ventures that shape the future of technology."
+          </p>
+      </div>
+          <!-- Testimonial 1 -->
+          <div class="testimonial">
+              <img src="/images/vcmam.png" alt="Amita Dev">
+              <h3>Dr. Amita Dev</h3>
+              <span>Former Vice Chancellor, IGDTUW</span>
+              <p>
+                "Since its foundation in 2013, Indira Gandhi Delhi Technical University for Women has never ceased to strive for excellence. The university's motto - "Aapo Deepo Bhava" has been the guiding philosophy behind all our collective endeavors - encouraging the students to find the light within and use it to illuminate the world around them. IGDTUW women are doing this through their immense talent, professional aptitude, and social awareness.
+                I feel honored to lead an institution that is facilitating women to realize their full potential and ace in all that they wish to pursue in life. IGDTUW graduates have topped UPSC and have held prominent government posts, they have carved a niche for themselves in this competitive industry — making an impact wherever they go. This has largely been made possible because of the empowering and supportive environment of IGDTUW where everyone is encouraged to mold and become their best selves. When they graduate - they don't just step out as professionals but as leaders, enablers, changemakers - the torchbearers of our country's bright future.
+                We have tech giants such as Google, Microsoft, Uber, Intuit, Goldman Sachs, Adobe to name a few, visiting our campus for the placement drive. Our institute had concluded the final placement season for the 2020-21 batch by surpassing the previous year's benchmarks with 431 job offers to students from various national and international organizations. Among the packages offered, 59.5 LPA package, ranked highest which was offered by Google."
+              </p>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial">
+              <img src="/images/Prof R K Singh.jpeg" alt="RK Singh">
+              <h3>Dr. R.K. Singh</h3>
+              <span>Dean (Student's Welfare), IGDTUW</span>
+              <p>
+                "Ever since its inception, Indira Gandhi Delhi Technical University for Women has been striving for excellence in all aspects of a student's life from employment to entrepreneurship, from professional acumen to academic excellence, from social sensibility to personal development. It fills me with true pride and happiness to see the graduates of this university doing so well in their lives
+
+                At IGDTUW, we take an interdisciplinary approach towards education where integrity stands at the heart of all our endeavors. Our students embody this spirit in everything they do on campus and in their careers. A hub of diverse ideas and students with varied interests, IGDTUW provides its students with the perfect platform to groom themselves for the world stepping out as strong, independent women cognizant of their role and responsibilities in shaping the future and giving back to society. This unique blend of varied capabilities hasn't gone unnoticed by the big players of the industry and it is with great pride that we say that you can find at least one IGDTUW woman in the offices of all the companies that are driving innovation today."
+              </p>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial">
+              <img src="/images/Prof Jasdeep Kaur.jpg" alt="Jasdeep Kaur">
+              <h3>Dr. Jasdeep Kaur Dhanoa</h3>
+              <span>Training and Placement Officer, IGDTUW</span>
+              <p>
+                "It fills me with immense hope and pleasure when I look back and think about how far Indira Gandhi Delhi Technical University for Women has come in such a short span of time. To see a women's university in a field where women have historically been underrepresented stand shoulder to shoulder with giants is the strongest testament to the vast potential that IGDTUW and its students possess
+
+                It is a matter of great pride and honor to be the Training and Placement Officer of this esteemed institution. The vast potential and talent of our students haven't gone unnoticed in the industry and year after year we witness an increasing number of companies approaching the Training and Placement Cell to hire graduates from IGDTUW We are grateful to our industry partners and research firms that have trusted us for years and helped the university reach the zenith of success. Graduates of IGDTUW are hard-working, intelligent, dedicated women who leave no stone unturned in surpassing the industry standards. They have carved a niche for themselves in this world as Incredible leaders, managers, team players, and technocrats
+                
+                It has been a sight of immense pride to witness the exponential rise of placement rates at IGDTUW and I am very hopeful about the laurels that the future has in store for IGDTUW."
+              </p>
+          </div>
+      </div>
+  </div>
+
+  <script>
+      const slider = document.getElementById('slider');
+      let index = 0;
+
+      function showNextSlide() {
+          index++;
+          if (index >= slider.children.length) {
+              index = 0; // Loop back to the first testimonial
+          }
+          slider.style.transform = `translateX(-${index * 100}%)`;
+      }
+
+      // Auto-slide every 5 seconds
+      setInterval(showNextSlide, 5000);
+  </script>
+
+
+  <!-- Get in touch -->
+  <section class="contact-section" id="contact-form">
+    <h1>CONTACT US</h1>
+    <div class="contact-container">
+      <form action="#" class="contact-form">
+        <input type="text" placeholder="Name" name="name" required>
+        <input type="email" placeholder="Enter your E-Mail" name="email" required>
+        <input type="text" placeholder="Subject" name="subject" required>
+        <textarea placeholder="Message" name="message" rows="5" required></textarea>
+        <button type="submit">Send <ion-icon name="arrow-forward-circle-sharp"></ion-icon></button>
+      </form>
+      <div class="info-container">
+        <div>
+          <p><strong><ion-icon name="location-sharp"></ion-icon> Address</strong></p>
+          <p>Indira Gandhi Delhi Technical University For Women
+            JAMES CHURCH, NEW CHURCH ROAD, KASHMERE GATE
+            DELHI -110006.</p>
+        </div>
+        <div>
+          <p><strong><ion-icon name="mail-sharp"></ion-icon> Email</strong></p>
+          <p>alumni@mail.alumni.igdtuw.ac.in</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!---<div class="contact-form" id="contact-form">
+    <h2>CONTACT US</h2>
+      <form id="contactForm">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Type Here...." required />
+        <label for="name">Name</label>
+        <input type="text" id="name" placeholder="Type Here...." required />
+        <label for="message">Message</label>
+        <textarea id="message" placeholder="Type Here...." required></textarea>
+        <button type="button" onclick="sendMail()">Submit</button>
+      </form>
+  </div>---->
+  <div class="contact-map">
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.834309266168!2d77.22972667533686!3d28.66467942564717!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd0683919c3b%3A0xf5fc331b74c2b9e2!2sIndira%20Gandhi%20Delhi%20Technical%20University%20for%20Women!5e0!3m2!1sen!2sin!4v1732163363724!5m2!1sen!2sin"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+
+  
+
+  
+
+
+
+
+
+
+
+  <!-- footer -->
+  <footer class="mainFooter"
+    style="padding-top:60px; background: url(assets/images/footer_bg3.jpeg) no-repeat; background-size: cover; background-color:#E3E6F3">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="headerContent">
+            <h2 style="color: #000"><span><b>Indira Gandhi Delhi Technical University For Women</b></span></h2>
+            <h5 style="font-family: 'Playfair Display', serif; color: #000"><span>(UNDER DELHI VIDE ACT 9 OF 2012, GOVT.
+                OF NCT OF DELHI)</span></h5>
+            <h6 style="font-family: 'Playfair Display', serif; color: #000"><span>ISO 9001:2015 Certified
+                University</span></h6>
+            <h6 style="font-family: 'Playfair Display', serif; color:#000"><span>JAMES CHURCH, NEW CHURCH ROAD, KASHMERE
+                GATE<br> DELHI -110006.</span></h6>
+          </div>
+          <div class="social-media1">
+            <ul>
+              <li><a href="https://www.facebook.com/igdtuw.delhi.5"><ion-icon name="logo-facebook"></ion-icon></a></li>	
+              <li><a href="https://www.youtube.com/channel/UCKmYhevZ59gJJP0ZbpReBKA/featured"><ion-icon name="logo-youtube"></ion-icon></a></li>
+              <li><a href="https://www.instagram.com/igdtuwrocks?r=nametag"><ion-icon name="logo-instagram"></ion-icon></a></li>	
+              <li><a href="https://twitter.com/IGDTUW_Delhi"><ion-icon name="logo-twitter"></ion-icon>
+              </a></li>
+          </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyRight" style="padding-top: 5px;">
+        <p style="font-size: 14px;">Copyright @IGDTUW - Designed &amp; Maintained by <a style="color: #000;"
+            href="https://www.linkedin.com/in/nidhi-chaukiyal-28b514290?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BtKqhIik2TLesMTTIYKMyXQ%3D%3D">Nidhi
+            Chaukiyal & Riya</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="script.js"></script>
+
+  <!----<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+    integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+    crossorigin="anonymous"></script>---->
+
+
+</body>
+
+</html>
