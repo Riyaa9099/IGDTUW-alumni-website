@@ -1,0 +1,767 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGDTUW Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary-color: #49184A;
+            --secondary-color: #088178;
+            --bg-light: #f8f9fa;
+            --text-dark: #333;
+            --text-light: #f8f9fa;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        #header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 10px 30px;
+          background: #E3E6F3;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+          z-index: 1000;
+          position: sticky;
+          top: 0;
+          text-align: center;
+          left: 0;
+        }
+        
+        #logos {
+          display: flex;
+          align-items: center;
+          gap: 10px; /* Adds space between the two logos */
+        }
+        
+        #logos .logo {
+          width: 100px;
+          height: auto;
+          
+          cursor: pointer;
+        }
+        
+        #navbar {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        
+        #navbar li {
+          list-style: none;
+          padding: 0 20px;
+          position: relative;
+        }
+        
+        #navbar li a {
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: 600;
+          color: #1a1a1a;
+          transition: 0.3s ease;
+        }
+        
+        #navbar li a:hover,
+        #navbar li a.active {
+          color: #088178;
+        }
+        
+        #navbar li a.active::after,
+        #navbar li a:hover:after {
+          content: '';
+          width: 30%;
+          height: 2px;
+          background: #088178;
+          position: absolute;
+          bottom: -4px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      
+        /* Dropdown menu styling */
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: #fff;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+      }
+      
+      .dropdown-menu li {
+        border-bottom: 1px solid #555;
+      }
+      
+      .dropdown-menu li a {
+        color: white;
+        padding: 10px 20px;
+        text-decoration: none;
+        display: block;
+      }
+      
+      .dropdown-menu li a:hover {
+        background-color: #575757;
+        
+      
+      }
+      
+      /* Show dropdown when parent is hovered */
+      .dropdown:hover .dropdown-menu {
+        display: block;
+        
+      }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile Nav Toggle */
+        #mobile {
+            display: none;
+            align-items: center;
+        }
+        
+        #mobile i {
+            color: var(--text-dark);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Banner Styles */
+        .banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://layout-alumniportal.alumnetworks.com/7_jaypeeu-alumnetworks-com/img/event-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            position: relative;
+        }
+        
+        .banner h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .banner p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+            animation: fadeInUp 1.2s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Events Section */
+        .events-section {
+            padding: 80px 50px;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--secondary-color);
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .events-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .event-card {
+            background-color: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            width: 350px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .event-image {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .event-card:hover .event-image img {
+            transform: scale(1.1);
+        }
+        
+        .event-date {
+            background-color: var(--primary-color);
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            padding: 12px;
+            font-size: 16px;
+        }
+        
+        .event-content {
+            padding: 20px;
+            text-align: left;
+        }
+        
+        .event-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+        }
+        
+        .event-details {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .event-details i {
+            margin-right: 8px;
+            color: var(--secondary-color);
+        }
+        
+        .register-btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 15px;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .register-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: var(--secondary-color);
+            color: #fff;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+        
+        .scroll-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('https://layout-alumniportal.alumnetworks.com/7_jaypeeu-alumnetworks-com/img/event-banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 60px 0 30px;
+            position: relative;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo img {
+            height: 80px;
+            margin: 0 10px;
+        }
+        
+        .university-name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .university-details {
+            font-size: 14px;
+            margin-bottom: 20px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .social-links {
+            margin-bottom: 30px;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            margin: 0 10px;
+            font-size: 18px;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            font-size: 14px;
+        }
+        
+        .footer-bottom a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-bottom a:hover {
+            color: #fff;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            #header {
+                padding: 15px 30px;
+            }
+            
+            #navbar {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                position: fixed;
+                top: 0;
+                right: -300px;
+                height: 100vh;
+                width: 300px;
+                background-color: #fff;
+                box-shadow: 0 40px 60px rgba(0, 0, 0, 0.1);
+                padding: 80px 0 0 10px;
+                transition: 0.3s;
+            }
+            
+            #navbar.active {
+                right: 0px;
+            }
+            
+            #navbar li {
+                margin-bottom: 25px;
+            }
+            
+            #mobile {
+                display: flex;
+            }
+            
+            #close {
+                display: block;
+                position: absolute;
+                top: 30px;
+                right: 30px;
+                color: #333;
+                font-size: 24px;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                background-color: #f5f5f5;
+                box-shadow: none;
+                display: none;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+            
+            .dropdown-toggle::after {
+                content: '\f107';
+                font-family: "Font Awesome 5 Free";
+                font-weight: 900;
+                margin-left: 5px;
+            }
+            
+            .banner {
+                height: 200px;
+            }
+            
+            .banner h1 {
+                font-size: 32px;
+            }
+            
+            .banner p {
+                font-size: 16px;
+            }
+            
+            .events-section {
+                padding: 50px 20px;
+            }
+            
+            .section-title {
+                font-size: 28px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #logos .logo {
+                height: 50px;
+            }
+            
+            .banner h1 {
+                font-size: 28px;
+            }
+            
+            .event-card {
+                width: 100%;
+                max-width: 350px;
+            }
+            
+            .university-name {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Section -->
+    <section id="header">
+        <div id="logos">
+          <a href="#"><img src="/images/igdtuw_logo.png" class="logo" alt="IGDTUW Logo"></a>
+          <a href="#"><img src="/images/IGDTUAA.png" class="logo" alt="IGDTUAA Logo"></a>
+        </div>
+        </div>
+        
+        <div>
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="/Entrepreneur">Entrepreneurship</a></li>
+                <li><a href="/job">Job Listings</a></li>
+                <li><a class="active" href="/events">Events</a></li>
+                <li><a href="/">Gallery</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/About">About Institute</a></li>
+                        <li><a href="/about_alumni_association">About Alumni Association</a></li>
+                        <li><a href="/our_socialmedia">Social Media Groups</a></li>
+                    </ul>
+                </li>
+                <li><a href="/join" id="Alumni_Connect">Join Us</a></li>
+                <li><a href="#" id="close"><i class="fas fa-times"></i></a></li>
+            </ul>
+        </div>
+        
+        <div id="mobile">
+            <i id="bar" class="fas fa-bars"></i>
+        </div>
+    </section>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <div class="banner-content">
+            <h1>IGDTUW Events</h1>
+            <p>Stay connected with the latest events and gatherings at IGDTUW</p>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section" id="events">
+        <h2 class="section-title">UPCOMING EVENTS</h2>
+        <div class="events-container">
+            <!-- Event Card 1 -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="/api/placeholder/350/180" alt="Teacher's Day Event">
+                </div>
+                <div class="event-date">
+                    Teacher's Day Celebration
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Teacher's Day Special Program</h3>
+                    <div class="event-details">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>05 September 2025</span>
+                    </div>
+                    <div class="event-details">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>IGDTUW, Auditorium</span>
+                    </div>
+                    <div class="event-details">
+                        <i class="fas fa-clock"></i>
+                        <span>10:00 AM</span>
+                    </div>
+                    <button class="register-btn" onclick="window.location.href='/'">REGISTER</button>
+                </div>
+            </div>
+            
+            <!-- Event Card 2 -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="/api/placeholder/350/180" alt="Taarangana Event">
+                </div>
+                <div class="event-date">
+                    Taarangana (Annual function)
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Annual Cultural Festival</h3>
+                    <div class="event-details">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>8 April 2025</span>
+                    </div>
+                    <div class="event-details">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>IGDTUW, Ground</span>
+                    </div>
+                    <div class="event-details">
+                        <i class="fas fa-clock"></i>
+                        <span>10:00 AM</span>
+                    </div>
+                    <button class="register-btn" onclick="window.location.href='/'">REGISTER</button>
+                </div>
+            </div>
+            
+            <!-- Event Card 3 -->
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="/api/placeholder/350/180" alt="Volleyball Tournament">
+                </div>
+                <div class="event-date">
+                    Volleyball - 2025
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Annual Sports Tournament</h3>
+                    <div class="event-details">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>2 April 2025</span>
+                    </div>
+                    <div class="event-details">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>IGDTUW, Ground</span>
+                    </div>
+                    <div class="event-details">
+                        <i class="fas fa-clock"></i>
+                        <span>10:00 AM</span>
+                    </div>
+                    <button class="register-btn" onclick="window.location.href='/'">REGISTER</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="/api/placeholder/80/80" alt="IGDTUW Logo">
+                <img src="/api/placeholder/80/80" alt="IGDTUAA Logo">
+            </div>
+            <div class="university-name">Indira Gandhi Delhi Technical University For Women</div>
+            <div class="university-details">
+                <p>(UNDER DELHI VIDE ACT 9 OF 2012, GOVT. OF NCT OF DELHI)</p>
+                <p>ISO 9001:2015 Certified University</p>
+                <p>JAMES CHURCH, NEW CHURCH ROAD, KASHMERE GATE, DELHI - 110006</p>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/igdtuw.delhi.5"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.youtube.com/channel/UCKmYhevZ59gJJP0ZbpReBKA/featured"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/igdtuwrocks?r=nametag"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/IGDTUW_Delhi"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright &copy; IGDTUW - Designed & Maintained by <a href="https://www.linkedin.com/in/nidhi-chaukiyal-28b514290">Nidhi Chaukiyal & Riya</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Navigation
+        const bar = document.getElementById('bar');
+        const close = document.getElementById('close');
+        const nav = document.getElementById('navbar');
+        
+        if (bar) {
+            bar.addEventListener('click', () => {
+                nav.classList.add('active');
+            });
+        }
+        
+        if (close) {
+            close.addEventListener('click', () => {
+                nav.classList.remove('active');
+            });
+        }
+        
+        // Dropdown Menu for Mobile
+        const dropdowns = document.querySelectorAll('.dropdown');
+        
+        dropdowns.forEach(dropdown => {
+            const toggle = dropdown.querySelector('.dropdown-toggle');
+            
+            toggle.addEventListener('click', (e) => {
+                if (window.innerWidth < 992) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+        
+        // Scroll to Top Button
+        const scrollBtn = document.querySelector('.scroll-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollBtn.classList.add('active');
+            } else {
+                scrollBtn.classList.remove('active');
+            }
+        });
+        
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Close Mobile Menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (nav.classList.contains('active') && 
+                !nav.contains(e.target) && 
+                e.target !== bar) {
+                nav.classList.remove('active');
+            }
+        });
+        
+        // Add smooth scroll to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
