@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal Dashboard</title>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<body>
+    
+    <form action="/profile" method="POST" enctype="multipart/form-data">
+        <div class="container">
+            <aside class="sidebar">
+                <h2>Explore More Here</h2>
+                <ul>
+                    <li><a href="/userProfile">Profile</a></li>
+                    <li><a href="/profile" class=" active">Jobs</a></li>
+                </ul>
+            </aside>
+            <main class="main-content">
+                <header class="header">
+                    <nav>
+                        <ul>
+                            <li><a href="/profile">Control Panel</a></li>
+                            <li><a href="#">Job Categories</a></li>
+                            <li><a href="#">Search Job</a></li>
+                            <li><a href="#">Newest Jobs</a></li>
+                            <li><a href="#">My Resumes</a></li>
+                        </ul>
+                    </nav>
+                </header>
+                <section class="section">
+                    <h3>My Stuff</h3>
+                    <div class="grid">
+                        <div class="card" onclick="location.href='/addResume';">
+                            <img src="/images/resume.png" alt="Add Resume">
+                            <a href="/addResume">Add Resume</a>
+                        </div>
+                        <div class="card" onclick="location.href='myResumes.html';">
+                            <img src="/images/my_resume.png" alt="My Resumes">
+                            <a href="myResumes.html">My Resumes</a>
+                        </div>
+                        <div class="card" onclick="location.href='myCoverLetters.html';">
+                            <img src="/images/cover_letter.png" alt="My Cover Letters">
+                            <a href="myCoverLetters.html">My Cover Letters</a>
+                        </div>
+                        <div class="card" onclick="location.href='addCoverLetter.html';">
+                            <img src="/images/cover_letter.png" alt="Add Cover Letter">
+                            <a href="addCoverLetter.html">Add Cover Letter</a>
+                        </div>
+                    </div>
+                    <h3>Jobs</h3>
+                    <div class="grid">
+                        <div class="card">
+                            <img src="categories-icon.png" alt="Jobs by Categories">
+                            <p>Jobs by Categories</p>
+                        </div>
+                        <div class="card">
+                            <img src="new-jobs-icon.png" alt="Newest Jobs">
+                            <p>Newest Jobs</p>
+                        </div>
+                        <div class="card">
+                            <img src="applied-jobs-icon.png" alt="My Applied Jobs">
+                            <p>My Applied Jobs</p>
+                        </div>
+                        <div class="card">
+                            <img src="search-jobs-icon.png" alt="Search Job">
+                            <p>Search Job</p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </form>
+    
+</body>
+</html>
