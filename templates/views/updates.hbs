@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGDTUAA - What's New</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+        
+        .logo-text {
+            margin-left: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+        
+        .logo-text p {
+            font-size: 16px;
+            color: #666;
+            margin: 0;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .nav-items {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .main-nav {
+            display: flex;
+        }
+        
+        .main-nav li a {
+            display: block;
+            padding: 15px 20px;
+            color: #444;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .main-nav li a:hover, 
+        .main-nav li a.active {
+            color: #00695c;
+            border-bottom: 3px solid #00695c;
+        }
+        
+        .auth-nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        .auth-nav li {
+            margin-left: 10px;
+        }
+        
+        .auth-nav .contact-us {
+            color: #fff;
+            background-color: #444;
+            padding: 8px 15px;
+        }
+        
+        .login-btn {
+            background-color: #ff9800;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        
+        .login-btn i {
+            margin-left: 5px;
+        }
+        
+        /* Main Content */
+        .page-title {
+            padding: 30px 0;
+            background-color: #fff;
+        }
+        
+        .page-title h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        /* Sidebar */
+        .content-with-sidebar {
+            display: flex;
+            margin: 20px 0;
+            gap: 30px;
+        }
+        
+        .sidebar {
+            width: 250px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .sidebar h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .sidebar ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .sidebar ul li:before {
+            content: "•";
+            color: #00695c;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .sidebar a {
+            color: #00695c;
+        }
+        
+        .search-box {
+            margin: 15px 0;
+            display: flex;
+        }
+        
+        .search-box input {
+            flex: 1;
+            padding: 4px;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+        
+        .search-box button {
+            padding: 8px 12px;
+            background-color: #00695c;
+            color: white;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+        
+        /* News Grid */
+        .news-grid {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .news-card {
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .news-image {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .news-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 20px;
+        }
+        
+        .news-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .news-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #666;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #f0f2f5;
+            padding: 50px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .university-name {
+            text-align: center;
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .university-info {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ddd;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: #00695c;
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-with-sidebar {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .nav-items {
+                flex-direction: column;
+            }
+            
+            .main-nav {
+                flex-wrap: wrap;
+            }
+            
+            .main-nav li a {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container logo-container">
+          <a href="#"><img src="/images/igdtuw_logo.png" class="logo" alt="IGDTUW Logo"></a>
+          <a href="#"><img src="/images/IGDTUAA.png" class="logo" alt="IGDTUAA Logo"></a>
+                
+            </div>
+        </div>
+    </header>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-items">
+            <ul class="main-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/entrepreneurship">Entrepreneurship</a></li>
+                <li><a href="/job-listings">Job Listings</a></li>
+                <li><a href="/events">Events</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/whats-new" class="active">What's New</a></li>
+                <li><a href="/join-us">Join Us</a></li>
+            </ul>
+            <ul class="auth-nav">
+                <li><a href="/contact-us" class="contact-us">Contact Us</a></li>
+                <li><a href="/login" class="login-btn">Login <i class="fas fa-lock"></i></a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="page-title">
+        <div class="container">
+            <h1>What's New</h1>
+        </div>
+    </div>
+    
+    <div class="container content-with-sidebar">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Manage</h2>
+            <ul>
+                <li><a href="#" onclick="showAddPostForm()">Add Post</a></li>
+                <li><a href="#" onclick="showManagePosts()">Manage Post</a></li>
+            </ul>
+            <div class="search-box">
+                <input type="text" placeholder="Search articles...">
+                <button onclick="searchPosts()">Search</button>
+            </div>
+            <h3>Categories</h3>
+            <ul>
+                <li><a href="/category/all">All Categories</a></li>
+                <li><a href="/category/updates">Updates</a></li>
+                <li><a href="/category/news">News</a></li>
+            </ul>
+        </div>
+        
+        <!-- News Grid -->
+        <div class="news-grid">
+            <!-- News Card 1 -->
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="/api/placeholder/300/180" alt="Achievement">
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title">Shivangi Agarwal - Achievement</h3>
+                    <p class="news-text">We extend our heartfelt congratulations to our esteemed alumna, Shivangi Agarwal, on her remarkable...</p>
+                </div>
+            </div>
+            
+            <!-- News Card 2 -->
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="/api/placeholder/300/180" alt="Workshop">
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title">Digital Warriors - Workshop</h3>
+                    <p class="news-text">We are proud to share that our university recently hosted an insightful workshop on...</p>
+                </div>
+            </div>
+            
+            <!-- News Card 3 -->
+            <div class="news-card">
+                <div class="news-image">
+                    <img src="/api/placeholder/300/180" alt="Competition">
+                </div>
+                <div class="news-content">
+                    <h3 class="news-title">Art & Cultural Hub's "Double Trouble" Duo Talent Competition</h3>
+                    <p class="news-text">The Art & Cultural Hub organized the thrilling "Double Trouble" Duo Talent Competition...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="addPostSection" style="display: none;">
+        <h2>Add Post</h2>
+        <input type="text" id="postTitle" placeholder="Title">
+        <textarea id="postContent" placeholder="Write your post..."></textarea>
+        <button onclick="addPost()">Submit</button>
+    </section>
+
+    <section id="managePostsSection" style="display: none;">
+        <h2>Manage Posts</h2>
+        <div id="postList"></div>
+    </section>
+    <script>
+        function searchPosts() {
+            let query = document.getElementById('searchBox').value.toLowerCase();
+            let articles = document.querySelectorAll('.news article');
+            articles.forEach(article => {
+                let text = article.innerText.toLowerCase();
+                article.style.display = text.includes(query) ? 'block' : 'none';
+            });
+        }
+
+        function showAddPostForm() {
+            document.getElementById('addPostSection').style.display = 'block';
+            document.getElementById('managePostsSection').style.display = 'none';
+        }
+
+        function showManagePosts() {
+            document.getElementById('addPostSection').style.display = 'none';
+            document.getElementById('managePostsSection').style.display = 'block';
+            loadPosts();
+        }
+
+        function addPost() {
+            let title = document.getElementById('postTitle').value;
+            let content = document.getElementById('postContent').value;
+            if (title && content) {
+                let post = document.createElement('article');
+                post.innerHTML = `<h3>${title}</h3><p>${content}</p>`;
+                document.getElementById('newsSection').appendChild(post);
+                document.getElementById('postTitle').value = '';
+                document.getElementById('postContent').value = '';
+            }
+        }
+
+        function loadPosts() {
+            let posts = document.querySelectorAll('.news article');
+            let postList = document.getElementById('postList');
+            postList.innerHTML = '';
+            posts.forEach(post => {
+                let div = document.createElement('div');
+                div.innerHTML = `<p>${post.innerHTML}</p><button onclick="deletePost(this)">Delete</button>`;
+                postList.appendChild(div);
+            });
+        }
+
+        function deletePost(btn) {
+            btn.parentElement.remove();
+        }
+    </script>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h2 class="university-name">Indira Gandhi Delhi Technical University For Women</h2>
+            <div class="university-info">
+                <p>(UNDER DELHI VIDE ACT 9 OF 2012, GOVT. OF NCT OF DELHI)</p>
+                <p>ISO 9001:2015 Certified University</p>
+                <p>JAMES CHURCH, NEW CHURCH ROAD, KASHMERE GATE</p>
+                <p>DELHI -110006.</p>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        
+    </footer>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    
+    <script>
+        // JavaScript for enhanced functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add click event to news cards for better mobile experience
+            const newsCards = document.querySelectorAll('.news-card');
+            newsCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // You can add functionality here like showing a modal with full news details
+                    console.log('Card clicked:', this.querySelector('.news-title').textContent);
+                });
+            });
+            
+            // Search functionality
+            const searchBox = document.querySelector('.search-box input');
+            const searchButton = document.querySelector('.search-box button');
+            
+            searchButton.addEventListener('click', function() {
+                performSearch(searchBox.value);
+            });
+            
+            searchBox.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch(searchBox.value);
+                }
+            });
+            
+            function performSearch(query) {
+                if (query.trim() !== '') {
+                    alert('Searching for: ' + query);
+                    // In a real application, this would send the search query to the server
+                    // or filter the existing content based on the query
+                }
+            }
+            
+            // Add active class to current navigation item
+            const currentLocation = window.location.pathname;
+            const navItems = document.querySelectorAll('.main-nav li a');
+            navItems.forEach(item => {
+                const href = item.getAttribute('href');
+                if (currentLocation.includes(href) && href !== '/') {
+                    item.classList.add('active');
+                } else if (currentLocation === '/' && href === '/') {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
