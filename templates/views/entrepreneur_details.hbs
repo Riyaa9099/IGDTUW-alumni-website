@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGDTUW | Entrepreneur Details</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #1e40af;
+            --secondary: #6366f1;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --accent: #8b5cf6;
+            --gray: #64748b;
+            --gray-light: #f1f5f9;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--gray-light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        /* Header Styles */
+        /* CSS for Top Header */
+.login button {
+  background-color: #ffaa00;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #004080;
+  font-weight: bold;
+}
+.top-header {
+  background-color: #1C292F; /* White background for a clean look */
+  padding: 5px 0; /* Top and bottom padding */
+  
+  font-family: 'Arial', sans-serif; /* Font family */
+}
+
+.top-header .container-fluid {
+  max-width: 1200px; /* Limit max width */
+  margin: 0 auto; /* Center align the content */
+}
+
+.top-right-nav {
+  text-align: right; /* Align navigation to the right */
+}
+
+.top-right-nav ul {
+  list-style: none; /* Remove bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flex for horizontal alignment */
+  gap: 20px; /* Space between list items */
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.top-right-nav ul li {
+  display: inline-block; /* Inline block for list items */
+}
+
+.top-right-nav ul li a {
+  color: #fff; /* Dark gray text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Font size */
+  font-weight: 600; /* Bold text */
+  display: flex; /* Flexbox for alignment */
+  align-items: center; /* Center icon with text */
+  gap: 8px; /* Space between icon and text */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.top-right-nav ul li a:hover {
+  color: #0073e6; /* Blue color on hover */
+}
+
+.material-icons {
+  font-size: 18px; /* Icon size */
+  vertical-align: middle; /* Align icon with text */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .top-header {
+      padding: 15px 0; /* Increase padding for smaller screens */
+  }
+
+  .top-right-nav ul {
+      gap: 15px; /* Reduce gap for smaller screens */
+  }
+
+  .top-right-nav ul li a {
+      font-size: 14px; /* Adjust font size */
+  }
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 30px;
+  background: #E3E6F3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  z-index: 1000;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  left: 0;
+}
+
+#logos {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adds space between the two logos */
+}
+
+#logos .logo {
+  width: 100px;
+  height: auto;
+  
+  cursor: pointer;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+  color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover:after {
+  content: '';
+  width: 30%;
+  height: 2px;
+  background: #088178;
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+        
+        #Alumni_Connect {
+            background-color: var(--primary);
+            color: white !important;
+            padding: 0.5rem 1.25rem !important;
+            border-radius: 50px;
+            transition: background-color 0.3s ease;
+        }
+        
+        #Alumni_Connect:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            list-style: none;
+            min-width: 200px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 0.5rem 0;
+            z-index: 101;
+            top: 100%;
+            left: 0;
+        }
+        
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown-menu li a {
+            display: block;
+            padding: 0.5rem 1rem !important;
+        }
+        
+        .dropdown-menu li a:hover {
+            background-color: #f1f5f9;
+        }
+        
+        /* Mobile menu toggle */
+        #menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .breadcrumb a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        /* Main Container */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(to right, var(--primary-dark), var(--primary));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-header h1 {
+            font-size: 2.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .entrepreneur-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .entrepreneur-card {
+            display: flex;
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            padding: 2rem;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .entrepreneur-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .entrepreneur-image {
+            flex: 0 0 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--primary);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        
+        .entrepreneur-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .entrepreneur-card:hover .entrepreneur-image img {
+            transform: scale(1.05);
+        }
+        
+        .entrepreneur-details {
+            flex: 1;
+        }
+        
+        .entrepreneur-name {
+            font-size: 1.75rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .entrepreneur-name::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            bottom: -5px;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .entrepreneur-role {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin: 1rem 0 0.5rem;
+        }
+        
+        .entrepreneur-company {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+        
+        .entrepreneur-details p {
+            margin: 0.5rem 0;
+            color: var(--gray);
+        }
+        
+        .entrepreneur-details strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+        }
+        
+        .badge-blue {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--primary);
+        }
+        
+        .badge-purple {
+            background-color: rgba(139, 92, 246, 0.1);
+            color: var(--accent);
+        }
+        
+        .product-services {
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-services h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+        
+        .product-services p {
+            line-height: 1.7;
+        }
+        
+        /* Footer Styles */
+        .mainFooter {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('/images/footer_bg3.jpeg') no-repeat;
+            background-size: cover;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+        
+        .headerContent h2 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .headerContent h5, .headerContent h6 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .social-media1 ul {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            list-style: none;
+            margin: 2rem 0;
+        }
+        
+        .social-media1 a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .social-media1 a:hover {
+            transform: translateY(-3px);
+            background-color: var(--primary-dark);
+        }
+        
+        .copyRight {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.25rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 99;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            #header {
+                padding: 1rem;
+            }
+            
+            .logo {
+                height: 50px;
+            }
+            
+            #navbar {
+                gap: 1rem;
+            }
+            
+            .entrepreneur-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .entrepreneur-image {
+                margin: 0 auto;
+            }
+            
+            .entrepreneur-name::after {
+                left: 25%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #menu-toggle {
+                display: block;
+            }
+            
+            #navbar {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                flex-direction: column;
+                background-color: white;
+                width: 80%;
+                height: calc(100vh - 80px);
+                padding: 1.5rem;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: right 0.3s ease;
+                gap: 1.5rem;
+                align-items: flex-start;
+            }
+            
+            #navbar.active {
+                right: 0;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                box-shadow: none;
+                width: 100%;
+                margin-top: 0.5rem;
+                display: none;
+            }
+            
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+            
+            .dropdown-toggle::after {
+                content: '\f107';
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                margin-left: 0.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+            
+            .page-header p {
+                font-size: 0.95rem;
+            }
+            
+            .entrepreneur-card {
+                padding: 1.5rem;
+            }
+            
+            .entrepreneur-image {
+                flex: 0 0 150px;
+                height: 150px;
+            }
+            
+            .entrepreneur-name {
+                font-size: 1.5rem;
+            }
+            
+            .entrepreneur-role {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .breadcrumb {
+                padding: 1rem;
+            }
+            
+            .main-container {
+                margin: 0 1rem 2rem;
+            }
+            
+            .page-header {
+                padding: 1.5rem 1rem;
+            }
+            
+            .entrepreneur-grid {
+                padding: 1.5rem 1rem;
+            }
+            
+            .entrepreneur-image {
+                flex: 0 0 120px;
+                height: 120px;
+            }
+            
+            .entrepreneur-name {
+                font-size: 1.35rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <div id="logos">
+            <a href="#"><img src="/images/igdtuw_logo.png" class="logo" alt="IGDTUW Logo"></a>
+            <a href="#"><img src="/images/IGDTUAA.png" class="logo" alt="IGDTUAA Logo"></a>
+        </div>
+
+        <button id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div>
+            <ul id="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a class="active" href="/Entrepreneur">Entrepreneurship</a></li>
+                <li><a href="/job">Job Listings</a></li>
+                <li><a href="/">Events</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/About">About Institute</a></li>
+                        <li><a href="/about_alumni_association">About Alumni Association</a></li>
+                        <li><a href="/our_socialmedia">Social Media Groups</a></li>
+                    </ul>
+                </li>
+                <li><a href="/join" id="Alumni_Connect">Join Us</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <div class="breadcrumb">
+        <a href="/"><i class="fas fa-home"></i> Home</a> / 
+        <a href="/Entrepreneur">Entrepreneurs</a> / 
+        <span>Entrepreneur Details</span>
+    </div>
+
+    <div class="main-container">
+        <div class="page-header">
+            <h1>Our Entrepreneurs</h1>
+            <p>Meet the innovative alumni who have ventured into entrepreneurship and are making a difference in various sectors</p>
+        </div>
+
+        <div class="entrepreneur-grid">
+            <div class="entrepreneur-card" id="kshitija">
+                <div class="entrepreneur-image">
+                    <img src="/images/kshitija.png" alt="Kshitija Shekhar">
+                </div>
+                <div class="entrepreneur-details">
+                    <h2 class="entrepreneur-name">Kshitija Shekhar</h2>
+                    <span class="badge badge-blue">B.Tech (CSE)</span>
+                    <span class="badge badge-purple">2017 - 2021</span>
+                    <p class="entrepreneur-role">Founder</p>
+                    <p class="entrepreneur-company">Raahee</p>
+                    <div class="product-services">
+                        <h4>Products/Services Offered</h4>
+                        <p>A mental health App where you can connect with therapists. Raahee helps people find the right mental health support by connecting them with qualified professionals through an accessible platform.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="entrepreneur-card" id="urja">
+                <div class="entrepreneur-image">
+                    <img src="/images/urja_kohli.png" alt="Urja Kohli">
+                </div>
+                <div class="entrepreneur-details">
+                    <h2 class="entrepreneur-name">Urja Kohli</h2>
+                    <span class="badge badge-blue">B.Tech (MAE)</span>
+                    <span class="badge badge-purple">2020</span>
+                    <p class="entrepreneur-role">Co-Founder & CEO</p>
+                    <p class="entrepreneur-company">Sonetz Inc.</p>
+                    <div class="product-services">
+                        <h4>Products/Services Offered</h4>
+                        <p>Information about Sonetz Inc. services is currently being updated. Check back soon for more details about their innovative offerings.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="entrepreneur-card" id="afreen">
+                <div class="entrepreneur-image">
+                    <img src="/images/afreen.png" alt="Afreen Siddiqui">
+                </div>
+                <div class="entrepreneur-details">
+                    <h2 class="entrepreneur-name">Afreen Siddiqui</h2>
+                    <span class="badge badge-blue">B.Tech (Mechanical Engineering)</span>
+                    <span class="badge badge-purple">2021 - 2025</span>
+                    <p class="entrepreneur-role">Founder</p>
+                    <p class="entrepreneur-company">Unboxing Education</p>
+                    <div class="product-services">
+                        <h4>Products/Services Offered</h4>
+                        <p>Information about Unboxing Education services is currently being updated. Check back soon for more details about their innovative offerings in the education sector.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mainFooter">
+        <div class="container">
+            <div class="headerContent">
+                <h2><b>Indira Gandhi Delhi Technical University For Women</b></h2>
+                <h5>(UNDER DELHI VIDE ACT 9 OF 2012, GOVT. OF NCT OF DELHI)</h5>
+                <h6>ISO 9001:2015 Certified University</h6>
+                <h6>JAMES CHURCH, NEW CHURCH ROAD, KASHMERE GATE<br> DELHI -110006.</h6>
+            </div>
+            <div class="social-media1">
+                <ul>
+                    <li><a href="https://www.facebook.com/igdtuw.delhi.5"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCKmYhevZ59gJJP0ZbpReBKA/featured"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="https://www.instagram.com/igdtuwrocks?r=nametag"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com/IGDTUW_Delhi"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyRight">
+                <p>Copyright @IGDTUW - Designed &amp; Maintained by <a href="https://www.linkedin.com/in/nidhi-chaukiyal-28b514290?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BtKqhIik2TLesMTTIYKMyXQ%3D%3D">Nidhi Chaukiyal & Riya</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+        
+        menuToggle.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+        
+        // Dropdown toggle for mobile
+        const dropdowns = document.querySelectorAll('.dropdown');
+        
+        dropdowns.forEach(dropdown => {
+            const dropdownToggle = dropdown.querySelector('.dropdown-toggle');
+            
+            dropdownToggle.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    e.preventDefault();
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768 && navbar.classList.contains('active')) {
+                if (!e.target.closest('#navbar') && !e.target.closest('#menu-toggle')) {
+                    navbar.classList.remove('active');
+                }
+            }
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // URL hash navigation
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash;
+            if (hash) {
+                const targetElement = document.querySelector(hash);
+                if (targetElement) {
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }, 500);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
